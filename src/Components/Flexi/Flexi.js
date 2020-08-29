@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Flexi.scss";
 import PropTypes from "prop-types";
+import {IdGenerator} from "../../utils/generateId"
 
 const Flexi = ({ config, onSubmitHandler, children }) => {
   const [data, setData] = useState({ person_name: "", state: "" });
@@ -15,7 +16,7 @@ const Flexi = ({ config, onSubmitHandler, children }) => {
       <li>
         {config.items.map((item) =>
           item.type === "TextField" ? (
-            <div key={`hcc-`}>
+            <div key={`hcc-${IdGenerator()}`}>
               <label className="label">{item.label}</label>
               <div>
                 <input
@@ -25,26 +26,26 @@ const Flexi = ({ config, onSubmitHandler, children }) => {
                   value={data.person_name}
                   placeholder="Please enter name"
                   onChange={(event) => {
-                    const eventObject = event;
+                    
                     editDataHandler(item.name, event.target.value);
                   }}
                 />
               </div>
             </div>
           ) : item.type === "DropDown" ? (
-            <div className="dropDown-container">
+            <div className="dropDown-container" key={`hcc-${IdGenerator()}`}>
               <label className="label">{item.label}</label>
               <div>
                 <select
                   name={item.name}
                   value={data.state}
                   onChange={(event) => {
-                    const eventObject = event;
+                    
                     editDataHandler("state", event.target.value);
                   }}
                 >
                   {item.values.map((eachOption) => (
-                    <option>{eachOption}</option>
+                    <option key={`option-${IdGenerator()}`}>{eachOption}</option>
                   ))}
                 </select>
               </div>
