@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import Flexi from "./Components/Flexi/Flexi";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const flexiConfig = {
+    items: [
+      {
+        name: "person_name",
+
+        label: "Person's Name",
+
+        type: "TextField",
+      },
+
+      {
+        name: "states",
+
+        label: "Person's state",
+
+        type: "DropDown",
+
+        values: ["Maharashtra", "Kerala", "Tamil Nadu"],
+      },
+    ],
+  };
+  const onSubmitHandler=(data)=>{
+    alert(`Data Recieved: Person's Name -> ${data.person_name},Person's state ->${data.state}`)
+  }
+  return <div className="App">
+    <div className="App-title"><h1>Flexi Tree</h1></div>
+    <div className="flexi-tree">
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+      </Flexi>
+      </Flexi>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+    <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+      </Flexi>
+      </div>
+  </div>;
 }
 
 export default App;
