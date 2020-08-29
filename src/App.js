@@ -41,6 +41,11 @@ function App() {
           <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler} />
           <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler} />
         </Flexi>
+        <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+        <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}>
+        <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+        <Flexi config={flexiConfig} onSubmitHandler={onSubmitHandler}/>
+          </Flexi>
       </div>
     </div>
   );
