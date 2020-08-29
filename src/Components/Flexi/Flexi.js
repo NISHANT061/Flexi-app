@@ -50,7 +50,7 @@ const Flexi = ({ config, onSubmitHandler, children, isNested }) => {
                 </div>
               </div>
             ) : item.type === "DropDown" ? (
-              <div className="dropDown-container" key={`hcc-${IdGenerator()}`}>
+              <div className="dropDown-container" key={`bcc-${IdGenerator()}`}>
                 <div className="label">{item.label}</div>
                 <div>
                   <select
