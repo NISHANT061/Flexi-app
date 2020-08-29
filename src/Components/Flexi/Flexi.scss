@@ -6,7 +6,9 @@ ul{
     li{
         width:200px;
         padding:0.5rem;
-        
+        .label{
+            text-align: left;
+        }
         &:first-of-type{
             background:#FFF;
             margin:0.5rem;
@@ -16,7 +18,9 @@ ul{
         flex:1
     }
         .label{
-            color:#A8B7C7
+            color:#A8B7C7;
+            text-align:left;
+            padding:0.5rem;
         }
         >div{
             margin:0.5rem 0;

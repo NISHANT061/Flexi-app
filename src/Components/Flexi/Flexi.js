@@ -17,7 +17,7 @@ const Flexi = ({ config, onSubmitHandler, children }) => {
         {config.items.map((item) =>
           item.type === "TextField" ? (
             <div key={`hcc-${IdGenerator()}`}>
-              <label className="label">{item.label}</label>
+              <div className="label">{item.label}</div>
               <div>
                 <input
                   className="input"
@@ -34,7 +34,7 @@ const Flexi = ({ config, onSubmitHandler, children }) => {
             </div>
           ) : item.type === "DropDown" ? (
             <div className="dropDown-container" key={`hcc-${IdGenerator()}`}>
-              <label className="label">{item.label}</label>
+              <div className="label">{item.label}</div>
               <div>
                 <select
                   name={item.name}
