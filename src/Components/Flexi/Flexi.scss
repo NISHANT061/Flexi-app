@@ -5,6 +5,13 @@ ul{
     list-style-type: none;
     li{
         width:200px;
+        padding:0.5rem;
+        
+        &:first-of-type{
+            background:#FFF;
+            margin:0.5rem;
+            border-radius:0.5rem;
+        }
     &.child-li{
         flex:1
     }
